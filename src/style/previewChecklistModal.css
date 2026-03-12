@@ -1,0 +1,283 @@
+/* ===============================
+   BACKDROP
+================================ */
+.preview-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+/* ===============================
+   MODAL
+================================ */
+.preview-modal {
+    width: 720px;
+    max-width: 92%;
+    max-height: 80vh;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    animation: previewFade 0.2s ease;
+    font-family: "Segoe UI", sans-serif;
+}
+
+@keyframes previewFade {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===============================
+   HEADER
+================================ */
+.preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.preview-header h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    color: #111827;
+}
+
+.preview-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.preview-btn:hover {
+    background: #e2e8f0;
+}
+
+/* ===============================
+   QUESTIONS
+================================ */
+.preview-question {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 12px;
+    background: #fafafa;
+}
+
+/* Header inside question */
+.preview-q-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.preview-q-header b {
+    font-size: 14px;
+    color: #111827;
+}
+
+/* Type badge */
+.preview-type {
+    font-size: 11px;
+    font-weight: 600;
+    background: #eef2ff;
+    color: #3730a3;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+/* ===============================
+   INPUT PREVIEW STYLES
+================================ */
+.preview-question input[type="text"],
+.preview-question input[type="number"] {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    padding: 0 12px;
+    font-size: 13px;
+    background: #f9fafb;
+}
+
+/* Yes / No layout */
+.preview-question label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-right: 16px;
+    font-size: 13px;
+    color: #374151;
+}
+
+/* ===============================
+   MUTED TEXT
+================================ */
+.preview-muted {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 6px;
+}
+
+/* ===============================
+   EMPTY STATE
+================================ */
+.preview-modal .preview-muted:first-child {
+    text-align: center;
+    padding: 40px 0;
+    font-size: 14px;
+}
+
+/* ===============================
+   MOBILE
+================================ */
+@media (max-width: 600px) {
+    .preview-modal {
+        padding: 16px;
+        max-height: 90vh;
+    }
+
+    .preview-header h3 {
+        font-size: 16px;
+    }
+}
+
+/* ===============================
+   EXCEL PREVIEW
+================================ */
+.preview-excel-wrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.preview-excel-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.preview-excel-table th {
+    background: #0b5c8a;
+    color: #ffffff;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+}
+
+.preview-excel-table td {
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.preview-excel-table tr:nth-child(even) td {
+    background: #f9fafb;
+}
+
+.preview-excel-table input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    cursor: not-allowed;
+}
+
+/* Excel preview photo */
+.preview-photo {
+    max-height: 40px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+/* Barcode preview */
+.preview-barcode {
+    font-size: 13px;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.yesno-cell {
+    display: flex;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.yesno-cell label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ===============================
+   IMAGE VIEWER
+================================ */
+.preview-photo.clickable {
+    cursor: zoom-in;
+}
+
+.image-viewer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 6000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-viewer {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.image-viewer:active {
+    cursor: grabbing;
+}
+
+.image-viewer img {
+    max-width: none;
+    max-height: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.image-viewer-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}

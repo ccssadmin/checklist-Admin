@@ -1,0 +1,86 @@
+/* FULL PAGE */
+.login-wrapper {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    background: #f8fafc;
+}
+
+/* LEFT SPLASH */
+.splash-panel {
+    width: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 1s ease forwards;
+    transition: transform 0.8s ease;
+}
+
+.splash-panel.slide-left {
+    transform: translateX(-20%);
+}
+
+.splash-content {
+    text-align: center;
+}
+
+.splash-icon {
+    width: 140px;
+    height: 140px;
+    background: rgba(0, 86, 150, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 24px;
+}
+
+.splash-icon i {
+    font-size: 64px;
+    color: #005696;
+}
+
+.splash-content h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #005696;
+}
+
+.splash-content p {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* RIGHT LOGIN */
+.login-panel {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.login-panel.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.login-card {
+    width: 420px;
+    border-radius: 12px;
+}
+
+/* FADE */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

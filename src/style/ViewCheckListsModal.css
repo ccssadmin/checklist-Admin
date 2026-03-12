@@ -1,0 +1,433 @@
+/* ======================================================
+   MODAL OVERLAY
+====================================================== */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+
+    /* solid dark like example */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    padding: 24px;
+}
+
+
+
+/* ======================================================
+   MODAL CONTENT
+====================================================== */
+
+.modal-content-VCM {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: inherit;
+    width: 100%;
+    max-width: 640px;
+
+    /* closer to example */
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        0 10px 20px rgba(0, 0, 0, 0.12);
+
+    animation: modalSlideIn 0.25s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ======================================================
+   MODAL HEADER
+====================================================== */
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.modal-close-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #f3f4f6;
+    border-radius: 8px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* ======================================================
+   MODAL BODY
+====================================================== */
+
+.modal-body {
+    padding: 24px 28px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* ======================================================
+   INFO CARDS
+====================================================== */
+
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.info-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 8px;
+    color: #3b82f6;
+}
+
+.info-card-content {
+    flex: 1;
+}
+
+.info-card-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+}
+
+.info-card-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ======================================================
+   STATUS SECTION
+====================================================== */
+
+.status-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f9fafb;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.status-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.status-badge-large {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-badge-large.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge-large.status-awaiting-review {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge-large.status-completed {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge-large.status-overdue {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ======================================================
+   ASSET SECTION
+====================================================== */
+
+.asset-section {
+    padding: 16px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+
+.asset-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.asset-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+/* ======================================================
+   DIVIDER
+====================================================== */
+
+.modal-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 20px 0;
+}
+
+/* ======================================================
+   QUESTIONS SECTION
+====================================================== */
+
+.questions-section {
+    margin-top: 4px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 16px;
+}
+
+.questions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ======================================================
+   QUESTION ITEM
+====================================================== */
+
+.question-item {
+    padding: 16px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+}
+
+.question-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.question-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: #3b82f6;
+    color: #ffffff;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.question-type {
+    padding: 4px 10px;
+    background: #e0e7ff;
+    color: #3730a3;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.question-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.question-answer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.answer-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.answer-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #059669;
+}
+
+/* ======================================================
+   MODAL FOOTER
+====================================================== */
+
+.modal-footer-VCM {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 28px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.modal-btn-secondary,
+.modal-btn-primary {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-btn-secondary {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.modal-btn-secondary:hover {
+    background: #f9fafb;
+    border-color: #d1d5db;
+}
+
+.modal-btn-primary {
+    background: #3b82f6;
+    border: none;
+    color: #ffffff;
+}
+
+.modal-btn-primary:hover {
+    background: #2563eb;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 768px) {
+    .modal-content {
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 12px;
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        padding: 20px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .modal-btn-secondary,
+    .modal-btn-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-overlay {
+        padding: 10px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .info-card {
+        padding: 12px;
+    }
+
+    .info-card-icon {
+        width: 36px;
+        height: 36px;
+    }
+}

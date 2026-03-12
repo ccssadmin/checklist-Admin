@@ -1,0 +1,344 @@
+/* ======================================================
+   MODAL OVERLAY & BASE
+====================================================== */
+
+.template-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.65);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.template-modal {
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.template-modal-large {
+    max-width: 920px;
+    width: 100%;
+    max-height: 90vh;
+}
+
+/* ======================================================
+   MODAL HEADER
+====================================================== */
+
+.template-modal-header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.template-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.template-muted {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.modal-close-btn {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #374151;
+    transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+
+/* ======================================================
+   MODAL BODY
+====================================================== */
+
+.template-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(90vh - 140px);
+}
+
+/* ======================================================
+   META GRID
+====================================================== */
+
+.template-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.meta-label {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    font-size: 14px;
+    color: #111827;
+    font-weight: 500;
+}
+
+.template-status {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.template-status-draft {
+    background: #fff7ed;
+    color: #c2410c;
+}
+
+.template-status-published {
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.template-status-completed {
+    background: #ecfdf5;
+    color: #065f46;
+}
+
+.preview-title {
+    margin: 0 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ======================================================
+   CANVAS VIEW
+====================================================== */
+
+.canvas-view {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.canvas-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    background: #ffffff;
+}
+
+.canvas-section-title {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.canvas-question-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.canvas-question {
+    display: grid;
+    grid-template-columns: 32px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: #f9fafb;
+    margin-bottom: 6px;
+}
+
+.question-index {
+    font-weight: 600;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.question-label {
+    font-size: 14px;
+    color: #111827;
+}
+
+.question-type {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    color: #374151;
+}
+
+/* ======================================================
+   EXCEL VIEW - MATCHING IMAGE DESIGN
+====================================================== */
+
+.excel-view {
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.excel-table-container {
+    overflow-x: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.excel-view-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.excel-view-table thead {
+    background: #0c5e96;
+}
+
+.excel-view-table th {
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: left;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.excel-view-table th:last-child {
+    border-right: none;
+}
+
+.excel-col-sno {
+    width: 80px;
+}
+
+.excel-col-column2,
+.excel-col-column3,
+.excel-col-column4,
+.excel-col-column5 {
+    width: auto;
+}
+
+.excel-col-actions {
+    width: 100px;
+    text-align: center;
+}
+
+.excel-view-table tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.excel-view-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.excel-sno {
+    background: #0c5e96;
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px;
+}
+
+.excel-cell {
+    padding: 4px 8px;
+}
+
+.excel-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #111827;
+    background: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.excel-input:focus {
+    outline: none;
+    border-color: #0c5e96;
+    box-shadow: 0 0 0 3px rgba(12, 94, 150, 0.1);
+}
+
+.excel-input:read-only {
+    background: #f9fafb;
+    cursor: default;
+}
+
+
+
+/* ======================================================
+   MODAL FOOTER
+====================================================== */
+
+.template-modal-footer {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.footer-close-btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.footer-close-btn:hover {
+    background: #f9fafb;
+}
+
+/* ======================================================
+   EMPTY STATE
+====================================================== */
+
+.template-empty {
+    text-align: center;
+    color: #6b7280;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.excel-photo-preview {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}

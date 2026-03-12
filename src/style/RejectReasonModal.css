@@ -1,0 +1,62 @@
+.reject-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5000;
+}
+
+.reject-modal {
+    width: 420px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.reject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.reject-subtitle {
+    color: #64748b;
+    margin: 10px 0 14px;
+}
+
+.reject-textarea {
+    width: 100%;
+    min-height: 100px;
+    border-radius: 10px;
+    border: 1px solid #cbd5f5;
+    padding: 10px;
+    resize: none;
+}
+
+.reject-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.btn-cancel {
+    background: #f1f5f9;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-confirm {
+    background: #dc2626;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+}

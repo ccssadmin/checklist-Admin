@@ -1,0 +1,666 @@
+/* ======================================================
+   PAGE LAYOUT
+====================================================== */
+.approval-queue-page {
+    padding: 11px;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* ======================================================
+   HEADER
+====================================================== */
+.aq-header {
+    margin-bottom: 24px;
+}
+
+.aq-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 4px;
+}
+
+/* ======================================================
+   STATUS TABS
+====================================================== */
+.status-tabs {
+    display: flex;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+.status-tab {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.status-tab:hover {
+    background: #f9fafb;
+}
+
+.status-tab.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+}
+
+.tab-count {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.tab-count.pending {
+    background: #f59e0b;
+}
+
+.tab-count.approved {
+    background: #10b981;
+}
+
+.tab-count.rejected {
+    background: #ef4444;
+}
+
+/* ======================================================
+   PENDING APPROVALS SECTION
+====================================================== */
+.pending-approvals-section {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 20px;
+}
+
+/* ======================================================
+   APPROVALS LIST
+====================================================== */
+.approvals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ======================================================
+   APPROVAL CARD
+====================================================== */
+.approval-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.approval-card.expanded {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
+}
+
+/* top summary row */
+.approval-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px;
+    background: #ffffff;
+    transition: background 0.2s ease;
+}
+
+.approval-card-row:hover {
+    background: #f9fafb;
+}
+
+/* ======================================================
+   APPROVAL CONTENT
+====================================================== */
+.approval-content {
+    flex: 1;
+}
+
+.approval-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px;
+}
+
+.approval-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.meta-item strong {
+    color: #111827;
+    font-weight: 600;
+}
+
+.meta-divider {
+    color: #cbd5e1;
+}
+
+/* ======================================================
+   REVIEW / VIEW BUTTON
+====================================================== */
+.review-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.review-btn:hover {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+}
+
+.review-btn.active {
+    background: #eff6ff;
+    border-color: #3b82f6;
+    color: #1d4ed8;
+}
+
+/* ======================================================
+   EXPANDABLE DETAIL PANEL
+====================================================== */
+.approval-detail-panel {
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+    padding: 24px;
+    animation: panelSlideDown 0.25s ease;
+}
+
+@keyframes panelSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.panel-loading {
+    border-top: 1px solid #e5e7eb;
+    background: #f8fafc;
+    padding: 32px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ======================================================
+   CHECKLIST INFO GRID
+====================================================== */
+.checklist-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ======================================================
+   DIVIDER
+====================================================== */
+.review-divider {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 20px 0;
+}
+
+/* ======================================================
+   ANSWERS REVIEW
+====================================================== */
+.answers-review-section {
+    margin-bottom: 24px;
+}
+
+.answers-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 16px;
+}
+
+.answers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ======================================================
+   ANSWER ITEM
+====================================================== */
+.answer-item {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.answer-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.answer-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #3b82f6;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.answer-question-content {
+    flex: 1;
+}
+
+.answer-question-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.required-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    background: #fee2e2;
+    color: #991b1b;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.answer-type {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* ======================================================
+   ANSWER VALUE BOX
+====================================================== */
+.answer-value-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.answer-value-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.answer-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #059669;
+}
+
+.no-answer {
+    color: #9ca3af;
+    font-style: italic;
+}
+
+/* ======================================================
+   EXCEL TABLE
+====================================================== */
+.excel-table-wrapper {
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+.excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.excel-table thead {
+    background: #1e5f8a;
+    color: white;
+}
+
+.excel-table th,
+.excel-table td {
+    border: 1px solid #dcdcdc;
+    padding: 10px;
+    text-align: left;
+}
+
+.excel-table tbody tr:nth-child(even) {
+    background-color: #f7f9fb;
+}
+
+.excel-table tbody tr:hover {
+    background-color: #eef3f7;
+}
+
+/* ======================================================
+   COMMENT SECTION
+====================================================== */
+.comment-section {
+    margin-bottom: 16px;
+}
+
+.comment-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.required-star {
+    color: #dc2626;
+}
+
+.comment-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #111827;
+    resize: vertical;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.comment-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.comment-helper {
+    font-size: 12px;
+    color: #dc2626;
+    margin-top: 6px;
+}
+
+/* ======================================================
+   WARNING BOX
+====================================================== */
+.warning-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #92400e;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.warning-box svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* ======================================================
+   PANEL FOOTER (approve / reject / close)
+====================================================== */
+.panel-footer {
+    display: flex;
+    gap: 12px;
+}
+
+.reject-btn,
+.approve-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.reject-btn {
+    background: #ef4444;
+    color: #ffffff;
+}
+
+.reject-btn:hover:not(:disabled) {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(220, 38, 38, 0.25);
+}
+
+.reject-btn:active {
+    transform: translateY(0);
+}
+
+.approve-btn {
+    background: #10b981;
+    color: #ffffff;
+}
+
+.approve-btn:hover:not(:disabled) {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(5, 150, 105, 0.25);
+}
+
+.approve-btn:active {
+    transform: translateY(0);
+}
+
+.reject-btn:disabled,
+.approve-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.close-panel-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.close-panel-btn:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 1024px) {
+    .status-tabs {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .approval-queue-page {
+        padding: 16px;
+    }
+
+    .approval-card-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .approval-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .meta-divider {
+        display: none;
+    }
+
+    .review-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .checklist-info-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .panel-footer {
+        flex-direction: column;
+    }
+
+    .reject-btn,
+    .approve-btn,
+    .close-panel-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .aq-title {
+        font-size: 20px;
+    }
+
+    .pending-approvals-section {
+        padding: 16px;
+    }
+
+    .approval-detail-panel {
+        padding: 16px;
+    }
+
+    .approval-name {
+        font-size: 15px;
+    }
+
+    .approval-meta {
+        font-size: 12px;
+    }
+
+    .answer-item {
+        padding: 12px;
+    }
+
+    .answer-number {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+
+    .answer-question-text {
+        font-size: 13px;
+    }
+
+    .comment-textarea {
+        font-size: 13px;
+    }
+}
+
+.label-heading {
+    background: #3b82f6;
+    color: white;
+    padding: 10px 14px;
+    margin: 18px 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+}
