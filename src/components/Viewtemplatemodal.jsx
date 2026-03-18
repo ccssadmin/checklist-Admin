@@ -44,7 +44,7 @@ export default function ViewTemplateModal({ template, onClose }) {
       return <div className="template-empty">No sections added</div>;
     }
 
-    const rows = template.sections[0].items || [];
+    const rows = template.sections.flatMap((section) => section.items || []);
 
     if (rows.length === 0) {
       return <div className="template-empty">No rows found</div>;
@@ -75,13 +75,9 @@ export default function ViewTemplateModal({ template, onClose }) {
 
                   {row.fields?.map((field) => {
                     if (field.field_type === "PHOTO") {
-                      const isAdminImage = field.field_name
-                        ?.toLowerCase()
-                        .includes("admin");
-
                       return (
                         <td key={field.field_id} className="excel-cell center">
-                          {isAdminImage && row.image_url ? (
+                          {row.image_url ? (
                             <img
                               src={row.image_url}
                               alt="preview"
@@ -93,7 +89,6 @@ export default function ViewTemplateModal({ template, onClose }) {
                         </td>
                       );
                     }
-
                     if (field.field_type === "CHECKBOX") {
                       return (
                         <td key={field.field_id} className="excel-cell center">
@@ -143,8 +138,8 @@ export default function ViewTemplateModal({ template, onClose }) {
           <div>
             <h3>{template.template_name}</h3>
             <p className="template-muted">
-              {template.department?.department_name} • Version{" "}
-              {template.version}
+              {template.department?.department_name || "No Department"} •
+              Version {template.version}
             </p>
           </div>
           <button onClick={onClose} className="modal-close-btn">
@@ -157,9 +152,9 @@ export default function ViewTemplateModal({ template, onClose }) {
             <div>
               <label className="meta-label">Status</label>
               <span
-                className={`template-status template-status-${template.status.toLowerCase()}`}
+                className={`template-status template-status-${(template.status || "draft").toLowerCase()}`}
               >
-                {template.status}
+                {template.status || "Draft"}
               </span>
             </div>
             <div>
