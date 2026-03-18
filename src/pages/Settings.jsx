@@ -116,7 +116,6 @@ export default function Settings() {
       {/* ================= HEADER ================= */}
       <div className="settings-header">
         <h1>Settings</h1>
-        <p>Profile, work details and employee permissions</p>
       </div>
 
       {/* ================= PROFILE ================= */}
