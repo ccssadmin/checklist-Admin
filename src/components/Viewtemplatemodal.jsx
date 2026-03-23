@@ -75,19 +75,47 @@ export default function ViewTemplateModal({ template, onClose }) {
 
                   {row.fields?.map((field) => {
                     if (field.field_type === "PHOTO") {
-                      return (
-                        <td key={field.field_id} className="excel-cell center">
-                          {row.image_url ? (
-                            <img
-                              src={row.image_url}
-                              alt="preview"
-                              className="excel-photo-preview"
-                            />
-                          ) : (
-                            "📷"
-                          )}
-                        </td>
-                      );
+                      // ✅ ADMIN IMAGE (sequence = 1)
+                      if (field.sequence === 1) {
+                        return (
+                          <td
+                            key={field.field_id}
+                            className="excel-cell center"
+                          >
+                            {row.image_url ? (
+                              <img
+                                src={row.image_url}
+                                alt="admin"
+                                className="excel-photo-preview"
+                              />
+                            ) : (
+                              "—"
+                            )}
+                          </td>
+                        );
+                      }
+
+                      // ✅ USER IMAGE (sequence = 2)
+                      if (field.sequence === 2) {
+                        const userImage = field.answer?.photoUrl;
+
+                        return (
+                          <td
+                            key={field.field_id}
+                            className="excel-cell center"
+                          >
+                            {userImage ? (
+                              <img
+                                src={userImage}
+                                alt="user"
+                                className="excel-photo-preview"
+                              />
+                            ) : (
+                              "—" // ✅ EMPTY if no upload
+                            )}
+                          </td>
+                        );
+                      }
                     }
                     if (field.field_type === "CHECKBOX") {
                       return (
